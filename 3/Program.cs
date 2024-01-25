@@ -56,7 +56,7 @@ class Problem3
     private static string stdin_str = "--stdin";
     private static string random_str = "--random";
     private static string arr_str = "Initial array: ";
-    private static string bkw_str = "Array reversed: ";
+    private static string bkw_str = "Reversed array: ";
     private static string help_msg = 
         $"Usage: dotnet run {random_str} [length] [min] [max] to get a random int array or\n" +
         $"dotnet run {stdin_str} to read an array from stdin, {sep}-separated\n" +
