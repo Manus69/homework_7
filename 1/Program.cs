@@ -22,24 +22,24 @@
     public void print()
     {
         _print(low, high);
-    }
-}
-
-class InputGetter
-{
-    public static uint get_uint()
-    {
-        return uint.Parse(Console.ReadLine()!);
+        Console.WriteLine();
     }
 }
 
 class Problem1()
 {
-    public static void Main()
+    private static string help_msg = "Usage: dotnet run [min] [max]";
+
+    public static void Main(string[] args)
     {
+        if (args.Length != 2)
+        {
+            Console.WriteLine(help_msg);
+            return ;
+        }
         try
         {
-            var np = new NumberPrinter(InputGetter.get_uint(), InputGetter.get_uint());
+            var np = new NumberPrinter(uint.Parse(args[0]), uint.Parse(args[1]));
             np.print();
         }
         catch (Exception ex) { Console.WriteLine(ex.Message); }
