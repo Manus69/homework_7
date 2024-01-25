@@ -11,19 +11,23 @@
 
 class Problem2
 {
-    private static string emsg = "IO Error";
-
-    public static void Main()
+    private static string help_msg = "Usage: dotnet run [arg0] [arg1]";
+    public static void Main(string[] args)
     {
+        if (args.Length != 2)
+        {
+            Console.WriteLine(help_msg);
+            return ;
+        }
         try
         {
             Console.WriteLine(
                 Ackermann.compute(
-                    uint.Parse(Console.ReadLine()!),
-                    uint.Parse(Console.ReadLine()!)
+                    uint.Parse(args[0]),
+                    uint.Parse(args[1])
                 )
             );
         }
-        catch { Console.WriteLine(emsg); }
+        catch (Exception ex) { Console.WriteLine(ex.Message); }
     }
 }
